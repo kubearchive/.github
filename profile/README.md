@@ -5,7 +5,7 @@ This project was inspired by [Tekton Results](https://github.com/tektoncd/result
 
 ## Architecture
 
-![kubarchive architecture diagram](arch-diagram.png)
+![kubarchive architecture diagram](/profile/arch-diagram.png)
 
 Kubearchive consists of the following components:
 
@@ -17,4 +17,4 @@ Kubearchive consists of the following components:
 
 ## Database Model
 
-![kubearchive database model](database-model.png)
+![kubearchive database model](/profile/database-model.png)

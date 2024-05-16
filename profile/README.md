@@ -7,14 +7,14 @@ This project was inspired by [Tekton Results](https://github.com/tektoncd/result
 
 ![kubarchive architecture diagram](/profile/arch-diagram.png)
 
-Kubearchive consists of the following components:
+KubeArchive consists of the following components:
 
-- An operator that manages the system as a whole.
-- An archive controller that reads data from the cluster.
-- An archive service that receives data to archive, and stores it in a database.
-- (future) A log storage backend.
-- (future) A REST API server that facilitates the storage and retrieval of cluster data.
+- A deployer
+- One or more APIServerSources that send cloud events to a sink
+- A sink that receives the cloud events and write the resource information in a DB
+- A REST API server that facilitates the retrieval of cluster data
+- A CLI that queries both the KubeArchive REST API and the k8s API to expose the resources
 
 ## Database Model
 
-![kubearchive database model](/profile/database-model.png)
+- WIP. Check [this Miro board](https://miro.com/app/board/uXjVNjKPncc=/) for more information.

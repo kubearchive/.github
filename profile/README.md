@@ -6,18 +6,29 @@ This project was inspired by [Tekton Results](https://github.com/tektoncd/result
 Check the DevConf.CZ 2024 lightning talk (15 min) about KubeArchive in 
 [this YouTube stream](https://youtu.be/ipb-_rgFNa4?t=3372) (already pointing to the appropriate timestamp).
 
+## Documentation
+
+Take a look to our docs in https://kubearchive.github.io/kubearchive
+
 ## Architecture
 
-![kubarchive architecture diagram](/profile/arch-diagram.png)
+![kubarchive architecture diagram](/profile/arch-diagram.jpg)
 
 KubeArchive consists of the following components:
 
-- A deployer
+- Custom Resource Definition for `KubeArchiveConfig`
+- An operator that reconciles `KubeArchiveConfig` Custom Resources to create APIServerSource CRs and update the `sink-filters` `ConfigMap`
 - One or more APIServerSources that send cloud events to a sink
-- A sink that receives the cloud events and write the resource information in a DB
-- A REST API server that facilitates the retrieval of cluster data
+- A sink that receives the cloud events and write the resource information in a DB based on the filters of `sink-filters` `ConfigMap`
+- A REST API server that facilitates the retrieval of the archived data
 - A CLI that queries both the KubeArchive REST API and the k8s API to expose the resources
+
+The user interacts with KubeArchive by:
+
+- Configuring ***what*** to archive and ***when*** to archive it in through [KubeArchiveConfig CR](https://kubearchive.github.io/kubearchive/main/configuration/kubearchiveconfig.html)
+- Querying the KubeArchive API to get archived resources
+- Querying the archived and the cluster data through the CLI
 
 ## Database Model
 
-- WIP. Check [this Miro board](https://miro.com/app/board/uXjVNjKPncc=/) for more information.
+![kubearchive_db_model](/profile/db-model.jpg)

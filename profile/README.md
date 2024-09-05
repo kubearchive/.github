@@ -3,8 +3,9 @@
 KubeArchive is a system that archives Kubernetes objects to permanent storage, which can then be retrieved through an API.
 This project was inspired by [Tekton Results](https://github.com/tektoncd/results).
 
-Check the DevConf.CZ 2024 lightning talk (15 min) about KubeArchive in 
-[this YouTube stream](https://youtu.be/ipb-_rgFNa4?t=3372) (already pointing to the appropriate timestamp).
+You can check the KubeArchive introduction and demos in:
+* [The lightning talk from DevConf.CZ 2024 (15 min)](https://www.youtube.com/watch?v=3N1ut_0hHBo)
+* [The presentation with Demo from DevConf.US 2024 (35 min)](https://www.youtube.com/watch?v=YR6jqPv_jaw)
 
 ## Architecture
 
